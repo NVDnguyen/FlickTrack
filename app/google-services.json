@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "1011539641766",
+    "firebase_url": "https://android1-c43af-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "android1-c43af",
+    "storage_bucket": "android1-c43af.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011539641766:android:7067554492f565ad6d3b67",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPjvuoBEeYn_xswhl5VJslILv73cijbr4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011539641766:android:9edb917839ab375f6d3b67",
+        "android_client_info": {
+          "package_name": "com.example.myapplication6"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPjvuoBEeYn_xswhl5VJslILv73cijbr4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

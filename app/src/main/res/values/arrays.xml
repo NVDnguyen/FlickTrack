@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="option_filter">
+        <item>Popular Movies</item>
+        <item>Top Rated Movies</item>
+        <item>Upcoming Movies</item>
+        <item>Now Playing Movies</item>
+    </string-array>
+
+    <string-array name="values_filter">
+        <item>popular</item>
+        <item>top_rated</item>
+        <item>upcoming</item>
+        <item>now_playing</item>
+    </string-array>
+
+
+    <string-array name="option_sort">
+        <item>Release Date</item>
+        <item>Rating</item>
+        <item>Not Set</item>
+    </string-array>
+
+    <string-array name="values_sort">
+        <item>release_date</item>
+        <item>rating</item>
+        <item></item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listMovieFragment">
+
+    <fragment
+        android:id="@+id/detailMovieFragment"
+        android:name="com.example.myapplication.present.ui.fragment.home.detail.DetailMovieFragment"
+        android:label="DetailMovieFragment" >
+        <argument
+            android:name="movie_selected"
+            app:argType="com.example.myapplication.domain.model.Movie"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/listMovieFragment"
+        android:name="com.example.myapplication.present.ui.fragment.home.list.ListMovieFragment"
+        android:label="ListMovieFragment" >
+        <action
+            android:id="@+id/action_listMovieFragment_to_detailMovieFragment"
+            app:destination="@id/detailMovieFragment" />
+        <action
+            android:id="@+id/action_listMovieFragment_to_profileSettingFragment"
+            app:destination="@id/profileSettingFragment" />
+        <action
+            android:id="@+id/action_listMovieFragment_to_reminderListFragment"
+            app:destination="@id/reminderListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileSettingFragment"
+        android:name="com.example.myapplication.present.ui.fragment.profile.ProfileSettingFragment"
+        android:label="ProfileSettingFragment" />
+    <fragment
+        android:id="@+id/reminderListFragment"
+        android:name="com.example.myapplication.present.ui.fragment.reminder.ReminderListFragment"
+        android:label="ReminderListFragment" />
+</navigation>

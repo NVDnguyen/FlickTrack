@@ -1,0 +1,114 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="reminder"
+            type="com.example.myapplication.domain.model.Reminder" />
+    </data>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@color/white"
+    android:layout_gravity="center"
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/remind_card_info"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@android:color/white">
+
+        <!-- Poster Image -->
+        <ImageView
+            android:id="@+id/poster_img_remind"
+            android:layout_width="90dp"
+            android:layout_height="100dp"
+            android:scaleType="centerInside"
+            android:contentDescription="Poster Image"
+            android:imageMv="@{reminder.poster_path}"/>
+
+        <!-- Vertical LinearLayout for text fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:gravity="top">
+
+            <TextView
+                android:id="@+id/movie_title"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{reminder.title}"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeMaxTextSize="20sp"
+                android:autoSizeStepGranularity="1sp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <!-- Movie Year on the left -->
+                <TextView
+                    android:id="@+id/movie_year"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@{`_` + reminder.yearRelease.substring(0, 4) + `_`}"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp" />
+
+                <!-- Movie Rating and Star aligned to the right -->
+                <TextView
+                    android:id="@+id/movie_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="4dp"
+                    android:text='@{String.format("%.1f", Double.parseDouble(reminder.rate)) + `/10`}'
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/star"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:star='@{reminder.fav}'/>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/remind_datetime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{String.format(`%02d/%02d/%02d %02d:%02d`, reminder.year, reminder.month, reminder.day, reminder.hour, reminder.minute)}"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Option icon to the right -->
+        <ImageView
+            android:id="@+id/remove_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/trash"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+</layout>

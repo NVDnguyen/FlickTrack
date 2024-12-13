@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+      <data>
+              <variable
+                  name="movie"
+                  type="com.example.myapplication.domain.model.Movie" />
+      </data>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="250dp"
+    android:background="@color/material_dynamic_secondary95"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="5dp"
+    android:id="@+id/item_layout"
+
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginBottom="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <ImageView
+            android:id="@+id/poster_img_1"
+            android:scaleType="fitCenter"
+            android:layout_width="200dp"
+            android:imageMv="@{movie.poster_path}"
+            android:layout_height="200dp"/>
+        <TextView
+            android:id="@+id/title_label_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{movie.title}"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textStyle="bold|italic"/>
+
+
+
+
+
+
+
+
+</LinearLayout>
+</layout>

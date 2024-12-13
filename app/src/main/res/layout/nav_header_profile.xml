@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="user"
+            type="com.example.myapplication.domain.model.User" />
+    </data>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header Section -->
+    <RelativeLayout
+        android:id="@+id/header_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/teal_700"
+        android:padding="16dp"
+        android:paddingBottom="20dp">
+
+        <!-- Profile Image -->
+        <FrameLayout
+            android:id="@+id/img"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/background_circular">
+
+            <ImageView
+                android:id="@+id/header_info_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:avatar="@{user.image}"
+                android:scaleType="fitXY"
+                android:clipToOutline="true"
+                android:layout_gravity="center"
+                android:background="@drawable/background_circular" />
+        </FrameLayout>
+
+        <!-- Name -->
+        <TextView
+            android:id="@+id/header_info_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img"
+            android:layout_marginTop="20dp"
+            android:text="@{user.name}"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Email -->
+        <ImageView
+            android:id="@+id/email_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mail"
+            android:layout_below="@id/header_info_name"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentStart="true"
+            android:paddingEnd="5dp" />
+
+        <TextView
+            android:id="@+id/header_info_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_alignBottom="@id/email_icon"
+            android:layout_marginStart="11dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@id/email_icon"
+            android:text="@{user.email}"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <!-- Birthday -->
+        <ImageView
+            android:id="@+id/birthday_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cake"
+            android:layout_below="@id/email_icon"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentStart="true"
+            android:paddingEnd="5dp" />
+
+        <TextView
+            android:id="@+id/header_info_birthday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/birthday_icon"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="3dp"
+            android:layout_toEndOf="@id/birthday_icon"
+            android:text="@{user.dob}"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <!-- Sex -->
+        <ImageView
+            android:id="@+id/sex_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/user_sex"
+            android:layout_below="@id/birthday_icon"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentStart="true"
+            android:paddingEnd="5dp"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/header_info_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/sex_icon"
+            android:layout_marginStart="11dp"
+            android:layout_marginBottom="1dp"
+            android:layout_toEndOf="@id/sex_icon"
+            android:text='@{user.sex==1 ? "Male": "Female" }'
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <!-- Edit Button -->
+        <TextView
+            android:id="@+id/button_edit"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:text="EDIT"
+            android:textColor="@color/white"
+            android:layout_below="@id/header_info_sex"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="false"
+            android:background="@drawable/shape_search_box" />
+    </RelativeLayout>
+
+    <!-- Body Section -->
+    <FrameLayout
+        android:id="@+id/body_section"
+        android:layout_below="@id/header_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="420dp"
+       >
+<!--        <include layout="@layout/item_reminder"/>-->
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reminder_recycler_view"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"/>
+
+        <!-- Button for Show All at the bottom -->
+        <Button
+            android:id="@+id/button_show_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show All"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/teal_700"
+            android:textColor="@android:color/white"
+            android:padding="10dp" />
+
+    </FrameLayout>
+
+
+</RelativeLayout>
+</layout>

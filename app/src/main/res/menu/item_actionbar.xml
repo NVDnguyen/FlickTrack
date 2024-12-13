@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/back"
+        android:title="Back"
+        android:icon="@drawable/baseline_arrow_back_gray"
+        app:showAsAction="always"
+        />
+    <group android:id="@+id/group_actions"
+        android:checkableBehavior="single" >
+
+        <item
+            android:id="@+id/action_search"
+            android:title="Search"
+            android:icon="@drawable/search"
+            app:showAsAction="ifRoom|collapseActionView"
+            app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+        <item
+            android:id="@+id/action_tab"
+            android:title="ACTION"
+            android:icon="@drawable/layout_grid"
+            app:showAsAction="always" />
+
+        <item
+            android:id="@+id/three_dot_menu"
+            android:icon="@drawable/dots_vertical"
+            android:title="MENU"
+            app:showAsAction="always" />
+
+    </group>
+
+</menu>

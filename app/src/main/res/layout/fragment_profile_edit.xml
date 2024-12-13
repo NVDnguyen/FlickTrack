@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="user"
+            type="com.example.myapplication.domain.model.User" />
+    </data>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/black"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <!-- Buttons Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/cancel_button_edit"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="CANCEL"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:background="@drawable/shape_search_box" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"/>
+
+            <TextView
+                android:id="@+id/done_button_edit"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="DONE"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:background="@drawable/shape_search_box" />
+        </LinearLayout>
+
+        <!-- Image Edit -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="30dp">
+            <ImageView
+                android:id="@+id/image_edit"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:avatar = "@{user.image}"
+                android:layout_gravity="start"
+                android:scaleType="fitCenter"
+                android:clipToOutline="true"
+                android:background="@drawable/background_circular"/>
+        </LinearLayout>
+
+        <!-- Name Input Field with Floating Hint -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={user.name}"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:inputType="textPersonName"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Email Input Field with Floating Hint -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="sample@gmail.com">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:text="@={user.email}"
+                android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="10dp">
+
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/cake_white"
+                android:paddingRight="10dp"/>
+
+            <EditText
+                android:id="@+id/date_of_birth_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="dd/MM/yyyy"
+                android:text='@{user.dob}'
+                android:textColor="@color/white"
+                android:focusable="false"
+                android:paddingRight="10dp"
+                android:clickable="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="10dp">
+
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/user_sex_white"
+                android:paddingRight="10dp"/>
+
+            <RadioGroup
+                android:id="@+id/sex_radio_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/male_radio_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{user.sex==1}"
+                    android:textColor="@color/white"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/female_radio_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{user.sex==0}"
+                    android:textColor="@color/white"
+                    android:text="Female" />
+            </RadioGroup>
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_marginTop="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

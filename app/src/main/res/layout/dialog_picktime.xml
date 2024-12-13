@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@color/black"
+    android:gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/selected_datetime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:text="Fri, Nov 27, 2015"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="250dp">
+
+        <!-- Wrap DatePicker and TimePicker in a LinearLayout -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <DatePicker
+                android:id="@+id/date_picker"
+                android:calendarTextColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="210dp"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"/>
+
+            <TimePicker
+                android:id="@+id/time_picker"
+                android:numbersTextColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:timePickerMode="spinner"
+            />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/button_edit"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="DONE"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="false"
+        android:background="@drawable/shape_search_box" />
+
+</LinearLayout>

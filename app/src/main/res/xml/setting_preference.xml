@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ListPreference
+        android:key="category"
+        android:title="Filter"
+        android:defaultValue="popular"
+        android:entries="@array/option_filter"
+        android:entryValues="@array/values_filter" />
+
+
+    <SeekBarPreference
+        android:key="from_rate"
+        android:title="Movie rate from :"
+        android:min="0"
+        android:max="10"
+        android:defaultValue="0"
+        app:showSeekBarValue="true"
+        app:useSimpleSummaryProvider="true" />
+
+    <Preference
+        android:key="from_year"
+        android:title="From Release Year :"
+       />
+
+    <ListPreference
+        android:key="sort"
+        android:title="Sort"
+        app:useSimpleSummaryProvider = "true"
+        android:entries="@array/option_sort"
+        android:entryValues="@array/values_sort" />
+
+</PreferenceScreen>

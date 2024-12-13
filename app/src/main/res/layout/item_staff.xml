@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+        <data>
+                <variable
+                    name="staff"
+                    type="com.example.myapplication.domain.model.Staff" />
+        </data>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="8dp"
+    app:cardBackgroundColor="@color/white">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/poster_img_1"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="fitCenter"
+                    android:imageMv="@{staff.profile_path}"
+                   />
+
+                <TextView
+                    android:id="@+id/title_label_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{staff.name}"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:gravity="center" />
+
+        </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+</layout>
